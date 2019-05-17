@@ -59,13 +59,13 @@ function message() {
       var units = parseInt(answer.units);
       var query = "SELECT stock_quantity, price FROM products WHERE item_id = ?";
       connection.query(query, [id], function (err, res) {
+        var stock = parseInt(res[0].stock_quantity);
         // console.log(res);
         if (units > stock) {
           console.log("Insufficient quantity!");
         }
         else {
           console.log("Orders received! Placing orders...");
-          var stock = parseInt(res[0].stock_quantity);
           console.log("Units left in stock: " + stock);
           var price = parseFloat(res[0].price);
           console.log("Price per unit: " + price);

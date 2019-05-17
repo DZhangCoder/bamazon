@@ -120,10 +120,10 @@ function select(managerChoice) {
       }
     }]).then(function (answer) {
       var id = answer.selectID.slice(9, 10);
-      console.log(id);
+      // console.log(id);
       var addedQuant = parseInt(answer.addedQuant);
       connection.query("SELECT * FROM products WHERE item_id = ?", [id], function (err, res) {
-        console.log(res);
+        // console.log(res);
         var stock = parseInt(res[0].stock_quantity);
         var newQuant = stock + addedQuant;
         updateProduct(newQuant, id);
@@ -142,6 +142,7 @@ function updateProduct(newQuant, id) {
       }],
     function (err, res) {
       console.log(res.affectedRows + " product(s) updated!\n");
+      start();
     });
 };
 

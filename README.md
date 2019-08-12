@@ -41,3 +41,6 @@ However, if the units exceeded the inventory, the app will alert you "Insufficie
 ![Image](assets/M5.1.png)
 You can view the updated sql database in your sql workbench. 
 ![Image](assets/M5.2.png)
+
+### Contact Information 
+General inquires at ddzhang2018@gmail.com.
